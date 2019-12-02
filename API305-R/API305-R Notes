@@ -1,0 +1,44 @@
+API305-R Notes
+
+1.	Streams to Lakes
+    a.	80% is in data step (hooray!)
+    b.	1 Zetabypte (1 billion TB!)
+    c.	Services for end results
+        i.	Amazon Redshift
+        ii.	Amazon Elastic Search
+        iii.	Amazon RDS
+        iv.	Amazon API Gateway
+    d.	AWS AI Services
+        i.	Amazon Forecast
+        ii.	Amazon Translate
+        iii.	Amazon Comprehend
+        iv.	Amazon Lex
+        v.	Amazon Personalize
+        vi.	Amazon recognition
+        vii.	Amazon Textract
+        viii.	Amazon Polly
+        ix.	Amazon Transcribe
+2.	Benefits of Step Functions (AF)
+    a.	Error Handling
+        i.	Built-in constructs for expoenential back-off
+    b.	Parallel
+        i.	Native states for parallel tasks
+    c.	Orchestration
+        i.	Separated orchestration logic, easier to maintain and debug, visual state machine
+    d.	Extensibility
+        i.	Easier addition of new states
+3.	Step function orchestration patterns
+    a.	Orchestration of multiple services
+        i.	Neptune – Graphical representation of a bunch of docs (graph DB)
+        ii.	AWS Textract.-> AWS Comprehend
+4.	Service integration for Step functions
+    a.	Step function task integrated with AWS task, so no waiter loop would be needed.
+    b. See here for service integrations: https://docs.aws.amazon.com/step-functions/latest/dg/concepts-service-integrations.html
+5.	Child workflows available in state machines!
+    a.	Step function tasks can reference other state machines.
+6.	AWS SAM – local execution for serverless systems.
+Demo Code: https://aws.amazon.com/blogs/machine-learning/discovering-and-indexing-podcast-episodes-using-amazon-transcribe-and-amazon-comprehend/
+7. Data available at all stages
+    a. Lambda destinations
+        i. Native service integration with other services to land things in S3, without SNS/ SQS
+    b.
