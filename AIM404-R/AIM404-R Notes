@@ -1,2 +1,45 @@
 AIM404-R Notes
 
+1.	RL Primer
+    a.	   RL addressed business problems with low data availability.
+    b.	Reward Hypothesis
+        i.	All goals can be described by the maximization of expected cumulative reward
+    c.	Agent chooses actions
+        i.	Each action has some reward in the environment, and agent seeks to max this reward.
+    d.	How RL differs
+        i.	RL helps in learning a strat to max a reward in a specific environment
+        ii.	Useful with less data
+        iii.	Learns from environment through iterative interaction
+    e.	RL applications in real world
+        i.	Dialog systems
+        ii.	Supply chain
+        iii.	Finance
+        iv.	Automatic scaling
+        v.	Online content delivery
+        vi.	Push notifications
+    f.	Contextual multi-armed bandits
+        i.	MAB with examination of state before making a decision
+        ii.	Make decisions one step forward from now
+2.	RL: Explore v Exploit
+    a.	We don’t have past data to learn from like supervised learning, so how do we interact with environment to make decisions?
+        i.	Explore: I make a new random decision that ends up beneficial and is different from past knowledge
+        ii.	Exploit: Take advantage of previous, beneficial decisions from past knowledge
+        iii.	This is a parameter balance required in training
+    b.	Doesn’t always depend on the past, sometimes makes random decision to see if we get to a new optima
+3.	Sagemaker RL
+    a.	Provided environment for building RL models, similar to DeepAR.
+        i.	Provides libraries RL-Coach, RL-Ray RLLib
+        ii.	Simulation available with AWS Sumerian and RoboMaker
+        iii.	Tons of examples!
+        iv.	Hosts both your agent and environment
+            1.	Experience of agent in the environment is logged as a training dataset
+            2.	This is used by Sagemaker to create a new RL model
+4.	Real life environment
+    a.	Challenges:
+        i.	Feedback is delayed. Needs to joined to inputs and actions taken o prepare next training dataset
+        ii.	Have to learn fast, not as many iterations available for agent, fast learning or online learning algorithms
+        iii.	Training never stops!
+5.	Cost = 1 – mean reward
+6.	Container used: Vowpal Wabbit
+    a.	https://github.com/VowpalWabbit/vowpal_wabbit/wiki
+7.	https://github.com/aws/sagemaker-rl-container
