@@ -6,17 +6,17 @@ API305-R Notes
     c.	Services for end results
         i.	Amazon Redshift
         ii.	Amazon Elastic Search
-        iii.	Amazon RDS
+        iii. Amazon RDS
         iv.	Amazon API Gateway
     d.	AWS AI Services
         i.	Amazon Forecast
         ii.	Amazon Translate
-        iii.	Amazon Comprehend
+        iii. Amazon Comprehend
         iv.	Amazon Lex
         v.	Amazon Personalize
         vi.	Amazon recognition
-        vii.	Amazon Textract
-        viii.	Amazon Polly
+        vii. Amazon Textract
+        viii. Amazon Polly
         ix.	Amazon Transcribe
 2.	Benefits of Step Functions (AF)
     a.	Error Handling
@@ -41,4 +41,3 @@ Demo Code: https://aws.amazon.com/blogs/machine-learning/discovering-and-indexin
 7. Data available at all stages
     a. Lambda destinations
         i. Native service integration with other services to land things in S3, without SNS/ SQS
-    b.
