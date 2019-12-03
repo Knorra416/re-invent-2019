@@ -1,0 +1,20 @@
+ANT202-R1 Notes
+
+1.	EMR 5.28 has a 2.43x runtime improvement over version 5.16 in benchmark test
+    a.	Improvements for both short and long running queries
+2.	Optimization Deep Dive
+    a.	Configuration
+        i.	5.22+ allows instance specific scaling of EBS volume
+        ii.	Sometimes its enough to increase volume storage instead of spinning up new instances
+        iii. Dynamic Partition Pruning
+            1.	Any static query (where value in list or where value ==) spark can dynamically prune partitions for you
+            2.	This DOES NOT happen when your where statement isn’t static (e.g. subqueries)
+            3.	Reduces the shuffling of data and speeds up execution, possibly adding more partitions (if balanced) can help with this.
+            4.	https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark-performance.html
+        iv.	Driver/ Executor configuration
+            1.	Balance between spark executor (not too small or large) size is the sweet spot.
+            2.	Default config ballpark 4 cores per executor, choosing the memory size by instance type should average to 4 cores per node
+            3.	Spark default uses native heap (10%), helped to increase this size
+    b.	The goal is reasonable defaults to stop the need for user tuning
+        i.	All of the above are on by default
+        ii.	Keep up to date on versions to continually improve query performance
