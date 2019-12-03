@@ -1,0 +1,39 @@
+AIM207-R4 Notes
+
+RL for the Sunday Driver
+
+1.	AI: capability of software to act intelligently, like a human
+2.	ML: train software to do tasks in a smarter way based on a bunch of data
+    a.	Supervised: Example-driven training; every datum has a corresponding label
+    b.	Unsupervised: No labels for training data
+    c.	Reinforcement: Learns through consequences of actions in a specific environment
+3.	RL Terms
+    a.	Agent: Entity or software that is trying to learn
+    b.	Environment: What the agent is trying to learn in
+    c.	State: The observed response of the environment
+    d.	Action: The actions available to agent
+    e.	Reward: Some function to determine good behavior vs bad behavior
+    f.	Episode: Agent moving from Initial State to Terminal State (one iteration of actions)
+    g.	Terminal State: End state of the agent (goes off track or finishes lap)
+4.	Reward function is the most important piece of RL!!
+    a.	Key part of DeepRacer Competition
+5.	Exploration vs Exploitation
+    a.	Exploration: not much learning, still exploring environment
+    b.	Exploitation: improved decisions based on past experiences
+6.	Value function
+    a.	Given the agent’s current state, what is the maximum reward that can be earned
+    b.	Can’t brute force all options to identify optimal, approximate a policy
+        i.	Policy approximation: approximate the optimal policy instead of the value function
+7.	When training an RL model optimizing for LONG TERM reward
+    a.	Maximize reward over the lifetime
+8.	Rollout: Number of episodes you want to run (hyperparameter)
+9.	Build a NN that is the car’s policy (aka the driver)
+10.	Gradient: rate of change of a function
+11.	Gradient Ascent: we are maximizing, so looking for peak reward (NN optimized based on slope of function increasing the most)
+12.	Simple reward function + deeper NN allows the model to learn on its own with less constraints
+13.	Available parameters to write a reward function:
+    a.	Track wall
+    b.	Field aka off-track
+    c.	Track surface aka on-track
+    d.	Track boundaries
+    e.	Track center
