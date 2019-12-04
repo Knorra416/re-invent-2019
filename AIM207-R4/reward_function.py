@@ -2,9 +2,9 @@ import math
 
 
 def reward_function(params):
-    '''
+    """
     Example of rewarding the agent to follow center line
-    '''
+    """
 
     # Read input parameters
     track_width = params['track_width']
@@ -35,8 +35,8 @@ def reward_function(params):
         reward += 10000
 
     # Speed Threshold
-    SPEED_THRESHOLD = 0.5
-    if params['speed'] < SPEED_THRESHOLD:
+    speed_threshold = 0.5
+    if params['speed'] < speed_threshold:
         reward *= 0.5
 
     # Distance to next waypoint
