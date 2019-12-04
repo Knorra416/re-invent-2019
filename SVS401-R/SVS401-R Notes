@@ -1,1 +1,53 @@
 SVS401-R Notes
+
+SVS401-R Notes
+1.	Best Places to impact performance of lambdas:
+    a.	Your function
+    b.	Execution environment
+    c.	Lambda Service itself
+2.	Your Function Optimizations
+    a.	Import only what you need
+    b.	Pre handler code is great for connections
+    c.	Remember – execution environments are reused
+        i.	Lazy load variables in the global scope
+        ii.	Don’t load it if you don’t need it
+        iii.	Clear out used variables
+    d.	Use SSM Parameter store for environment variables, secrets control, feature flags, etc
+    e.	Lambda Layer – code artifact to reduce duplication
+        i.	Share code or data across lambdas
+        ii.	Can have up to five layers
+        iii.	GREAT way to reuse code across functions
+    f.	Amazon RDS Proxy
+        i.	Simplifies connection to Amazon RDS databases from lambda
+        ii.	Reduces connections via a shared connection pool to your database
+        iii.	Rollout in progress
+    g.	Function Best Practices for Lambda
+        i.	Use functions to TRANSFORM, not TRANSPORT
+            1.	Use purposeful built services for communication fan-out, message handling, data replication, writing to data stores/ databases
+        ii.	Leave retry and error handling to the services themselves
+        iii.	Read only what you need. For example:
+            1.	Message filters in amazon SNS – Deployment pipeline
+            2.	Fine grained rules in Amazon EventBridge
+            3.	Query filters in Amazon RDS Aurora
+            4.	Use Amazon S3 Select
+            5.	Properly indexed databases
+    h.	AWS Step Functions integrates with EMR now (no lambdas, no loop logic)
+        i.	Lambda Event Destinations!
+        i.	For asynchronous invocations, capture success or failure
+        ii.	Destinations can go to: other Lambdas, SNS, SQS, or EventBridge
+3.	Execution Environment Optimizations
+    a.	Increasing the lambda memory on a CPU bound process can increase performance at small cost increase
+    b.	Lambda plus VPC, no longer a cold-start pain point
+    c.	Amazon EventBridge
+        i.	SNS on steroids
+        ii.	Fanout and fine grained rules to match messages to a complex architecture of messages.
+        iii.	Similar to an event bus
+    d.	AWS SAM
+        i.	Extension on top of CFN, use it!
+        ii.	YAML template to build and deploy applications
+        iii.	Policy Templates: https://bit.ly/2xWycnj
+4.	Lambda Service Optimizations
+    a.	Provisioned Concurrency for Lambda
+        i.	Pre-creates execution environments all the way up through the INIT phase
+        ii.	Creates execution environments for all of your lambda functions
+        iii.	Improves cold-start time for lambda invocations
