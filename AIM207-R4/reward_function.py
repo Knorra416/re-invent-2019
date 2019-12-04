@@ -16,16 +16,13 @@ def reward_function(params):
     marker_2 = 0.25 * track_width
     marker_3 = 0.5 * track_width
 
-    # further progress down the track gets higher reward
-    reward = progress*0.1
-
     # Give higher reward if the car is closer to center line and vice versa
     if distance_from_center <= marker_1:
-        reward += 5
+        reward = 1.0
     elif distance_from_center <= marker_2:
-        reward += 2
+        reward = 0.5
     elif distance_from_center <= marker_3:
-        reward += 1
+        reward = 0.1
     else:
         reward = 1e-3  # likely crashed/ close to off track
 
@@ -50,7 +47,9 @@ def reward_function(params):
     x_len = waypoint_x - car_x
     y_len = waypoint_y - car_y
     distance = x_len**2 + y_len**2
-    nxt_way_distance = math.sqrt(abs(distance))
-    reward = reward - nxt_way_distance
+    nxt_way_distance = math.sqrt(distance)
+    distance_reward = 1 - nxt_way_distance**0.05
+
+    reward = reward * distance_reward
 
     return float(reward)
