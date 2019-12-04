@@ -51,6 +51,6 @@ def reward_function(params):
     nxt_way_distance = math.sqrt(distance)
     distance_reward = 1 - nxt_way_distance**0.05
 
-    reward = reward * distance_reward
+    reward *= distance_reward
 
     return float(reward)
