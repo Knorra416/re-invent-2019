@@ -1,1 +1,17 @@
 AIM402-R Notes
+1.	GITHUB FOR COURSE: https://github.com/C24IO/Reinvent2019Pytorch
+2.	State of the art in NLP
+    a.	Essential components of NLP
+        i.	Tokenize
+        ii.	Remove Stop Words
+        iii. Lemmatize
+        iv.	Replace Rare Words
+        v. Embeddings
+    b.	Evolution of NLP from RNNs to Transformers
+        i.	Seq2Seq
+        ii.	Attention
+        iii. Transformer
+3.	Sagemaker Notebook Best Practices
+    a.	Running notebooks, you can past github links into the startup.
+    b.	Pytorch tutorials:  https://github.com/pytorch/tutorials
+    c.	Pytorch examples https://github.com/pytorch/examples/
