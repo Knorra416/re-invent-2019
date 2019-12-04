@@ -17,7 +17,7 @@ def reward_function(params):
     marker_3 = 0.5 * track_width
 
     # further progress down the track gets higher reward
-    reward = progress
+    reward = progress*0.1
 
     # Give higher reward if the car is closer to center line and vice versa
     if distance_from_center <= marker_1:
