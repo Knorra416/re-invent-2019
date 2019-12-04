@@ -1,3 +1,6 @@
+import math
+
+
 def reward_function(params):
     '''
     Example of rewarding the agent to follow center line
@@ -15,11 +18,11 @@ def reward_function(params):
 
     # Give higher reward if the car is closer to center line and vice versa
     if distance_from_center <= marker_1:
-        reward = 1.0
+        reward = 5
     elif distance_from_center <= marker_2:
-        reward = 0.5
+        reward = 2
     elif distance_from_center <= marker_3:
-        reward = 0.1
+        reward = 1
     else:
         reward = 1e-3  # likely crashed/ close to off track
 
@@ -34,5 +37,17 @@ def reward_function(params):
     SPEED_THRESHOLD = 0.5
     if params['speed'] < SPEED_THRESHOLD:
         reward *= 0.5
+
+    # Distance to next waypoint
+    car_x = params['x']
+    car_y = params['y']
+    waypoint_x = params['closest_waypoints'][0]
+    waypoint_y = params['closest_waypoints'][1]
+
+    x_len = waypoint_x - car_x
+    y_len = waypoint_y - car_y
+    distance = x_len**2 + y_len**2
+    nxt_way_distance = math.sqrt(abs(distance))
+    reward = reward - nxt_way_distance
 
     return float(reward)
