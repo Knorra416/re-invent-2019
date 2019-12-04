@@ -1,0 +1,5 @@
+.idea/*
+Reinvent2019Pytorch/src/venv/*
+data/*
+.ipynb_checkpoints
+.DS_Store
