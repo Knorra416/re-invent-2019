@@ -1,0 +1,37 @@
+ROB301-R1 Notes
+1.	What is a robot?
+    a.	A robot is an autonomous machine capable pf sense its environment. It performs tasks in this environment.
+    b.	Robot development follows the same framework to software development
+        i.	Testing is done in simulation, physical tests come later
+    c.	ROS (robot operating system) open source library
+    d.	Gazebo physics-based system to help with simulation
+2.	Robomaker offerings
+    a.	Cloud extensions for ROS library
+    b.	Simulation environment
+    c.	Fleet management for robot code and deploy new code to entire fleets
+3.	Benefits of simulation testing
+    a.	Safety
+    b.	Repeatability
+    c.	Regression test behaviors, A/B testing
+        i.	Waves of long running tests to asses quality metrics
+        ii.	Performance testing, how well am I doing over time
+    d.	Parallel tests, much faster than real time
+    e.	Scenarios/ randomization
+4.	CI/CD capabilities for robotic deployment
+    a.	Costly for QA engineers and dev ops engineers to integrate simulation into pipeline
+5.	Specifications of simulation
+    a.	Tools used AWS Robomaker, AWS Code pipeline, AWS Codebuild
+        i.	Push up to Github triggers deployment
+        ii.	Simulation launched with lambda
+    b.	One test per simulation job is one option
+        i.	One simulation with multiple test jobs is another option, based on preference
+    c.	Only pay for simulation compute time
+6.	iRobot testing and simulation
+    a.	25 million robots sold
+    b.	Build the Roomba!
+    c.	More overall code, more reuse of code, means harder to test physically
+    d.	War stories
+        i.	Several robots on a common base
+        ii.	Physical tests compete for time, space, and resources
+        iii.	Hardware versions play a part as well
+        iv.	Baseline testing takes about six weeks to get to prod
