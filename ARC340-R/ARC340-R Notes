@@ -1,2 +1,27 @@
 ARC340-R Notes
 
+1.	What is the hard part of ML?
+    a.	The hard part of ML is not the ML, it is the massive ongoing effort to maintain ML systems. Easy to built but expensive to maintain.
+2.	Model Development Life Cycle (MDLC)
+    a.	Data sourcing (data engineer)
+    b.	Data quality assurance (data engineer)
+    c.	Feature engineering (data engineer)
+    d.	Model Development (research scientist)
+    e.	Model training & evaluation (research scientist)
+    f.	Model deployment & inference (research scientist)
+    g.	Production integration (software engineer)
+    h.	Issues:
+        i.	Human driven
+        ii.	Slow and error prone
+3.	Lessons learned to improve MDLC
+    a.	Meta data store in DynamoDB for all data sources (curated availability list and info)
+    b.	Every time data is published, compute column summary stats and row count
+        i.	Compare these metrics to the past two previous snapshots
+    c.	Feature engineereing for streaming, save down feature development incremental states so new changes can just be added instead of entire reprocessing
+    d.	Codepipeline and ECR for custom model build, then train them using Sagemaker
+4.	Bringing the MDLC together
+    a.	How do we combine all of the model development steps together?
+        i.	Step functions frameworks!
+        ii.	CFN templates that contain all of the MDLC steps
+        iii.	Pre-build step function systems available for MDLC
+    b.	CFN plus SFN can automate a lot of the development/ deployment steps of machine learning
