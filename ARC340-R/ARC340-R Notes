@@ -25,3 +25,4 @@ ARC340-R Notes
         ii.	CFN templates that contain all of the MDLC steps
         iii.	Pre-build step function systems available for MDLC
     b.	CFN plus SFN can automate a lot of the development/ deployment steps of machine learning
+    c. https://aws.training/machinelearning
