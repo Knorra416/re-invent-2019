@@ -1,0 +1,25 @@
+OPN209 Notes
+
+1.	Application delivery at Netflix
+    a.	Stream has been highly competitive for a long time
+    b.	Netflix has succeeded through innovation and out-innovating competition
+    c.	Application teams focus on their particular domain and remove the standardized processes each team must use (deployment, telemetry, etc) and centralize these processes.
+    d.	“Paved Road” method, centralize a lot of commodity concerns so teams can be more efficient
+    e.	Centralizing these processes helps spread best practices
+    f.	First attempt: Netflix Asgard (deliver assets to AWS)
+    g.	Netflix in all countries except: China, NKorea, Syria, Crimea
+    h.	Netflix Recommendations all come from AWS systems, packaged as a javascript app in smart tv (CDN to get app)
+        i.	AWS data servers stream the bytes of the show to your tv app!
+2.	Netflix tooling: Spinnaker
+    a.	Spinnaker – continuous deployment tool with lessons learned from Netflix process, a service on AWS
+    b.	Chaos Monkey – kills instances randomly to force engineers to build resilient architecture
+    c.	Chapp – Netflix’s chaos application (in Spinnaker) and before deployment run a chaos experiment
+    d.	Netflix runs 50,000 deployment pipelines per day
+3.	Netflix’s community Engagement
+    a.	Spinnaker donated to the CD Foundation (Linux foundation)
+    b.	Spinnaker integrats with all existing CI/CD tools (Jenkins, Tekton)
+4.	AWS Spinnaker community involvement
+    a.	AWS Contributed to Spinnaker
+        i.	Improved AWS Documentation
+        ii.	5 blogs about Spinnaker and AWS
+        iii.	Code Contributions
