@@ -1,0 +1,30 @@
+AIM223-R12 Notes
+
+1.	ML on AWS
+    a.	Sagemaker and AWS ML Benefits
+        i.	Broadest and deepest set of AI and ML services
+        ii.	Accelerate your adoption of ML with SM
+        iii.	Built on the most comprehensive cloud
+2.	Intro to ML and GANs
+    a.	Discriminative models – discriminate or define between things (classify A or B)
+    b.	Generative models – create complete new data (images, data, etc)
+    c.	Generative Adversarial Network
+        i.	Two networks that are constantly competing against each other
+        ii.	Generator vs Discriminator
+        iii.	The end goal is creating new data that mimics the training data, BUT is not a copy of that training information
+        iv.	Analogy – Generator = orchestra, Discriminator = conductor
+            1.	Music sounds good when they’re both in sync
+    d.	https://github.com/aws-samples/aws-deepcomposer-samples
+    e.	Loss functions
+        i.	Produce a number between ground truth and generated data that helps the model improve
+        ii.	Wasserstein (generator) loss function is the type used for GANs (both discriminator and generator)
+            1.	Critic also includes a gradient penalty loss function
+        iii.	Stabilization of both loss functions = good model
+    f.	GAN Training
+        i.	5 critic updates to one generator update (ratio of training)
+        ii.	Sample quality correlated with critic loss when using WGANs
+    g.	GAN challenges
+        i.	Clean datasets are HARD
+        ii.	GANs take time to converge during training
+        iii.	Complexity in defining subjective metrics for music creation
+        iv.	Complexity in defining quantitative metrics for music creation
